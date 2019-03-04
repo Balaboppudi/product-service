@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - changeSet:
+          id: 5
+          author: balaboppudi        
+          changes:
+          - insert:
+              tableName: PRODUCT
+              columns:
+                - column:
+                    name: desc
+                    value: Average Product
+                - column:
+                    name: name
+                    value: Product-4
+                - column:
+                    name: price
+                    value: 250   
+    
