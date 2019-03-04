@@ -1,0 +1,85 @@
+databaseChangeLog:
+  - preConditions:
+    - dbms:
+       type: h2
+  - changeSet:
+      id: 1
+      author: balaboppudi
+      changes:
+        - createTable:
+            tableName: PRODUCT
+            columns:
+              - column:
+                  name: PRODUCT_ID
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: desc
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price
+                  type: int
+                  constraints:
+                    nullable: false
+                    
+  - changeSet:
+        id: 2
+        author: balaboppudi        
+        changes:
+        - insert:
+            tableName: PRODUCT
+            columns:
+              - column:
+                  name: desc
+                  value: Good Product
+              - column:
+                  name: name
+                  value: Product-1
+              - column:
+                  name: price
+                  value: 250   
+  - changeSet:
+        id: 3
+        author: balaboppudi        
+        changes:
+        - insert:
+            tableName: PRODUCT
+            columns:
+              - column:
+                  name: desc
+                  value: Nice Product
+              - column:
+                  name: name
+                  value: Product-2
+              - column:
+                  name: price
+                  value: 250   
+  - changeSet:
+        id: 4
+        author: balaboppudi        
+        changes:
+        - insert:
+            tableName: PRODUCT
+            columns:
+              - column:
+                  name: desc
+                  value: Average Product
+              - column:
+                  name: name
+                  value: Product-3
+              - column:
+                  name: price
+                  value: 250   
+  - include:
+     file: changelog1.yml  
+     relativeToChangelogFile: true
